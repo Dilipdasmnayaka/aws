@@ -8,6 +8,8 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies
+RUN npm install npm@latest -g
+
 RUN npm install
 
 # Copy all project files
@@ -32,3 +34,4 @@ EXPOSE 80
 
 # Start NGINX
 CMD ["nginx", "-g", "daemon off;"]
+
